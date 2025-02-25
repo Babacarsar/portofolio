@@ -11,7 +11,7 @@ const About = () => {
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg">
             <p className="font-medium text-xl text-center">
-              Étudiant en Master d'Ingénierie des Données, je suis en recherche d'une alternance en Data Engineering pour appliquer mes compétences en gestion et transformation des flux de données.
+              Passionné par la donnée sous toutes ses formes, je suis étudiant en Master d'Ingénierie des Données, à la recherche d'une alternance alliant Data Engineering et Data Analytics pour exploiter pleinement la chaîne de valeur des données.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8 mt-12">
@@ -21,9 +21,9 @@ const About = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-white p-6 rounded-lg shadow-md"
               >
-                <h3 className="text-lg font-semibold mb-4">Expertise Technique</h3>
+                <h3 className="text-lg font-semibold mb-4">Data Engineering</h3>
                 <p className="text-muted-foreground">
-                  Spécialisé dans la modélisation de bases de données, l'ingestion et l'orchestration des données, j'ai travaillé sur des pipelines complexes avec Apache Spark, Kafka, Airflow, Python, SQL et Docker. Mon expérience inclut également la mise en place de Data Lakes et Data Warehouses (MinIO, PostgreSQL) et le déploiement d'infrastructures scalables.
+                  Expertise en conception et développement de pipelines de données avec Apache Spark, Kafka, Airflow et Docker. Expérience dans la mise en place d'architectures Big Data et l'optimisation des flux ETL pour garantir des données fiables et de qualité. Maîtrise des environnements SQL (PostgreSQL) et NoSQL.
                 </p>
               </motion.div>
               
@@ -33,19 +33,37 @@ const About = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-white p-6 rounded-lg shadow-md"
               >
-                <h3 className="text-lg font-semibold mb-4">Objectif Professionnel</h3>
+                <h3 className="text-lg font-semibold mb-4">Data Analytics</h3>
                 <p className="text-muted-foreground">
-                  Je souhaite contribuer à la mise en place de solutions Big Data robustes et optimisées, en développant des pipelines ETL performants et en améliorant la qualité et la fiabilité des données pour une meilleure exploitation analytique.
+                  Capable d'extraire des insights stratégiques grâce à la visualisation de données (Power BI) et l'analyse statistique avec Python (Pandas, NumPy, Scikit-learn). Compétences en création de tableaux de bord interactifs et en modélisation prédictive pour faciliter la prise de décision.
                 </p>
               </motion.div>
             </div>
             
-            <div className="flex justify-center gap-4 mt-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="bg-white p-6 rounded-lg shadow-md mt-8"
+            >
+              <h3 className="text-lg font-semibold mb-4 text-center">Objectif Professionnel</h3>
+              <p className="text-muted-foreground text-center">
+                Contribuer à l'excellence opérationnelle des entreprises en combinant ingénierie et analyse des données : concevoir des architectures data robustes tout en générant des insights actionnables pour optimiser les processus métier.
+              </p>
+            </motion.div>
+            
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="px-6 py-3 bg-primary/10 rounded-full"
               >
                 Data Engineering
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-6 py-3 bg-primary/10 rounded-full"
+              >
+                Data Analytics 
               </motion.div>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -57,7 +75,7 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 className="px-6 py-3 bg-primary/10 rounded-full"
               >
-                ETL Pipeline
+                Visualisation
               </motion.div>
             </div>
           </div>

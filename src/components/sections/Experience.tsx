@@ -1,135 +1,131 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-interface ExperienceItem {
-  title: string;
-  company: string;
-  period: string;
-  description: string[];
-  skills: string[];
-}
-
-const ExperienceCard = ({ experience }: { experience: ExperienceItem }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white p-6 rounded-lg shadow-md"
-    >
-      <h3 className="text-xl font-semibold">{experience.title}</h3>
-      <div className="text-lg text-primary/80 font-medium mb-2">{experience.company}</div>
-      <div className="text-sm text-muted-foreground mb-4">{experience.period}</div>
-      <ul className="list-disc list-inside space-y-2 mb-4">
-        {experience.description.map((item, index) => (
-          <li key={index} className="text-muted-foreground">{item}</li>
-        ))}
-      </ul>
-      <div className="flex flex-wrap gap-2">
-        {experience.skills.map((skill, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-primary/5 rounded-full text-sm"
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
+import { Calendar, MapPin } from 'lucide-react';
 
 const Experience = () => {
-  const experiences: ExperienceItem[] = [
+  const experiences = [
     {
-      title: "Développeur Front-end",
-      company: "Competences221",
-      period: "Août 2024 - Septembre 2024",
+      title: "Senior Data Analyst",
+      company: "TechInnovate Solutions",
+      period: "2021 - Présent",
+      location: "Paris, France",
       description: [
-        "Développement de composants dynamiques Angular pour la gestion des offres d'emploi",
-        "Création d'interfaces responsives avec Bootstrap",
-        "Intégration d'API REST et gestion des requêtes HTTP",
-        "Implémentation de formulaires réactifs avec validations avancées"
-      ],
-      skills: [
-        "Angular",
-        "API REST",
-        "JavaScript",
-        "Bootstrap",
-        "MySQL"
+        "Direction d'une équipe de 3 analystes data pour des projets d'intelligence d'affaires",
+        "Conception et mise en œuvre d'algorithmes de machine learning pour la prévision des ventes, augmentant la précision des prévisions de 28%",
+        "Développement d'une solution d'analyse de données en temps réel qui a permis de réduire les temps de traitement de 65%",
+        "Collaboration avec les équipes produit pour intégrer des insights data dans la roadmap produit"
       ]
     },
     {
-      title: "Analyste de Données",
-      company: "Malick Galaxie Groupe",
-      period: "Novembre 2023 - Mai 2024",
+      title: "Data Analyst",
+      company: "DataVision Corp",
+      period: "2018 - 2021",
+      location: "Lyon, France",
       description: [
-        "Conception et paramétrage de questionnaires électroniques sous kobotoolbox",
-        "Suivi et analyse de données d'enquêtes de satisfaction",
-        "Traitement des données avec Power Query et tableaux dynamiques Excel",
-        "Création de visualisations sous Excel et Power BI"
-      ],
-      skills: [
-        "Analyse de données",
-        "Power BI",
-        "Excel",
-        "Kobotoolbox",
-        "Power Query"
+        "Analyse de grandes quantités de données client pour identifier des tendances et opportunités commerciales",
+        "Création de dashboards interactifs avec Tableau, améliorant la prise de décision des équipes commerciales",
+        "Mise en œuvre de modèles prédictifs pour l'optimisation des campagnes marketing, augmentant le ROI de 35%",
+        "Collaboration avec les équipes IT pour améliorer les processus de collecte et de stockage des données"
       ]
     },
     {
-      title: "Développeur Web",
-      company: "Malick Galaxie Groupe",
-      period: "Janvier 2022 - Juin 2022",
+      title: "Data Analyst Junior",
+      company: "AnalyticsPro",
+      period: "2016 - 2018",
+      location: "Bordeaux, France",
       description: [
-        "Création et personnalisation de thèmes WordPress",
-        "Optimisation des performances et du référencement",
-        "Développement de fonctionnalités spécifiques en PHP",
-        "Mise en place de stratégies SEO"
-      ],
-      skills: [
-        "WordPress",
-        "PHP",
-        "JavaScript",
-        "HTML/CSS",
-        "SEO",
-        "Talend"
-      ]
-    },
-    {
-      title: "Développeur Web",
-      company: "Foundation 1 SN",
-      period: "Avril 2021 - Mai 2021",
-      description: [
-        "Conception et développement de sites web",
-        "Collaboration avec l'équipe de design pour l'UX/UI",
-        "Optimisation des performances",
-        "Intégration de plugins WordPress personnalisés"
-      ],
-      skills: [
-        "WordPress",
-        "MySQL",
-        "UX/UI",
-        "SEO"
+        "Analyse des données de vente et des tendances du marché pour les rapports trimestriels",
+        "Automatisation des processus de reporting avec Python, réduisant le temps de production de 75%",
+        "Nettoyage et préparation des données pour les analyses avancées",
+        "Support aux équipes marketing dans l'interprétation des résultats d'analyse"
       ]
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8 }
+    }
+  };
+
   return (
-    <section id="experience" className="py-24 bg-background">
+    <section id="experience" className="py-20 bg-section">
       <div className="section-container">
-        <div className="animate-on-scroll">
-          <h2 className="section-title">Expérience Professionnelle</h2>
-          <p className="section-subtitle">
-            Un parcours riche combinant développement web et analyse de données
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Mon Expérience Professionnelle</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Découvrez mon parcours professionnel et les projets sur lesquels j'ai eu l'opportunité de travailler
           </p>
-          
-          <div className="grid grid-cols-1 gap-6 mt-12">
+        </motion.div>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-primary/20 rounded-full"></div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="space-y-12"
+          >
             {experiences.map((experience, index) => (
-              <ExperienceCard key={index} experience={experience} />
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                className={`flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              >
+                <div className="md:w-1/2"></div>
+                <div className="relative flex items-center justify-center md:justify-start md:absolute md:left-1/2 md:transform md:-translate-x-1/2 z-10">
+                  <div className="h-8 w-8 rounded-full bg-primary flex items-center justify-center">
+                    <div className="h-4 w-4 rounded-full bg-background"></div>
+                  </div>
+                </div>
+                <div className="md:w-1/2 ml-8 md:ml-0 md:px-8 pb-8">
+                  <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
+                    <h3 className="text-xl font-semibold">{experience.title}</h3>
+                    <h4 className="text-primary font-medium mb-2">{experience.company}</h4>
+                    
+                    <div className="flex flex-wrap text-sm text-muted-foreground mb-4">
+                      <div className="flex items-center mr-4 mb-2">
+                        <Calendar className="h-4 w-4 mr-1" />
+                        <span>{experience.period}</span>
+                      </div>
+                      <div className="flex items-center mb-2">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span>{experience.location}</span>
+                      </div>
+                    </div>
+                    
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {experience.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

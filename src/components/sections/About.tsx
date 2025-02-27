@@ -1,85 +1,106 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Briefcase, GraduationCap, Heart } from 'lucide-react';
+import { Separator } from "@/components/ui/separator";
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-section">
+    <section id="about" className="py-20 bg-section">
       <div className="section-container">
-        <div className="animate-on-scroll space-y-12">
-          <h2 className="section-title">À Propos</h2>
-          
-          <div className="max-w-3xl mx-auto space-y-6 text-lg">
-            <p className="font-medium text-xl text-center">
-              Passionné par la donnée sous toutes ses formes, je suis étudiant en Master d'Ingénierie des Données, à la recherche d'une alternance alliant Data Engineering et Data Analytics pour exploiter pleinement la chaîne de valeur des données.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">À Propos de Moi</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Découvrez mon parcours, mes passions et ma vision en tant que Data Analyst
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <img 
+              src="/lovable-uploads/b9003e23-995c-4060-956c-cc7b1c03d2f3.png" 
+              alt="Photo professionnelle" 
+              className="rounded-lg shadow-lg w-full max-w-md mx-auto"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <h3 className="text-2xl font-semibold mb-4">Analyste Data & IA Passionné</h3>
+            <p className="text-muted-foreground mb-6">
+              Passionné par l'analyse de données et l'intelligence artificielle, je m'efforce de transformer 
+              des données complexes en insights stratégiques qui aident les organisations à prendre des 
+              décisions éclairées. Mon parcours combine expertise technique, rigueur analytique et 
+              compréhension approfondie des enjeux business.
+            </p>
+            <p className="text-muted-foreground mb-8">
+              J'ai développé une solide expertise dans l'exploitation des données pour résoudre des problèmes 
+              complexes et créer de la valeur ajoutée. Mon approche méthodique et ma curiosité naturelle me 
+              permettent d'identifier des opportunités cachées dans les données.
             </p>
             
-            <div className="grid md:grid-cols-2 gap-8 mt-12">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white p-6 rounded-lg shadow-md"
-              >
-                <h3 className="text-lg font-semibold mb-4">Data Engineering</h3>
-                <p className="text-muted-foreground">
-                  Expertise en conception et développement de pipelines de données avec Apache Spark, Kafka, Airflow et Docker. Expérience dans la mise en place d'architectures Big Data et l'optimisation des flux ETL pour garantir des données fiables et de qualité. Maîtrise des environnements SQL (PostgreSQL) et NoSQL.
-                </p>
-              </motion.div>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-full mr-4">
+                  <Briefcase className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Expérience professionnelle</h4>
+                  <p className="text-muted-foreground text-sm">5+ ans dans l'analyse de données et les projets data</p>
+                </div>
+              </div>
               
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white p-6 rounded-lg shadow-md"
-              >
-                <h3 className="text-lg font-semibold mb-4">Data Analytics</h3>
-                <p className="text-muted-foreground">
-                  Capable d'extraire des insights stratégiques grâce à la visualisation de données (Power BI) et l'analyse statistique avec Python (Pandas, NumPy, Scikit-learn). Compétences en création de tableaux de bord interactifs et en modélisation prédictive pour faciliter la prise de décision.
-                </p>
-              </motion.div>
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-full mr-4">
+                  <GraduationCap className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Formation</h4>
+                  <p className="text-muted-foreground text-sm">Master en Data Science & Intelligence Artificielle</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-full mr-4">
+                  <Heart className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Passions</h4>
+                  <p className="text-muted-foreground text-sm">Machine Learning, Visualisation de données, Innovation technologique</p>
+                </div>
+              </div>
             </div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="bg-white p-6 rounded-lg shadow-md mt-8"
-            >
-              <h3 className="text-lg font-semibold mb-4 text-center">Objectif Professionnel</h3>
-              <p className="text-muted-foreground text-center">
-                Contribuer à l'excellence opérationnelle des entreprises en combinant ingénierie et analyse des données : concevoir des architectures data robustes tout en générant des insights actionnables pour optimiser les processus métier.
-              </p>
-            </motion.div>
-            
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-primary/10 rounded-full"
-              >
-                Data Engineering
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-primary/10 rounded-full"
-              >
-                Data Analytics 
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-primary/10 rounded-full"
-              >
-                Big Data
-              </motion.div>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="px-6 py-3 bg-primary/10 rounded-full"
-              >
-                Visualisation
-              </motion.div>
-            </div>
-          </div>
+          </motion.div>
         </div>
+
+        <Separator className="my-16" />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h3 className="text-2xl font-semibold mb-4">Ma Philosophie</h3>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Je crois fermement au pouvoir transformateur des données lorsqu'elles sont analysées avec rigueur et 
+            interprétées avec intelligence. Mon objectif est d'aider les organisations à exploiter pleinement le 
+            potentiel de leurs données pour stimuler l'innovation, optimiser les processus et créer un impact positif.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

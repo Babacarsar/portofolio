@@ -1,126 +1,159 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Database, Server, GitBranch, Calculator, LineChart } from 'lucide-react';
-
-interface Project {
-  title: string;
-  period?: string;
-  location?: string;
-  description: string;
-  details?: string[];
-  technologies: string[];
-  icon: React.ReactNode;
-}
-
-const ProjectCard = ({ project }: { project: Project }) => {
-  return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all"
-    >
-      <div className="text-primary mb-4">{project.icon}</div>
-      <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-      {project.period && project.location && (
-        <div className="text-sm text-muted-foreground mb-3">
-          {project.period} | {project.location}
-        </div>
-      )}
-      <p className="text-muted-foreground mb-4">{project.description}</p>
-      {project.details && (
-        <ul className="list-disc list-inside mb-4 text-sm text-muted-foreground space-y-2">
-          {project.details.map((detail, index) => (
-            <li key={index}>{detail}</li>
-          ))}
-        </ul>
-      )}
-      <div className="flex flex-wrap gap-2">
-        {project.technologies.map((tech, index) => (
-          <span
-            key={index}
-            className="px-3 py-1 bg-primary/5 rounded-full text-sm"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
-    </motion.div>
-  );
-};
+import { ExternalLink, Github } from 'lucide-react';
+import { Badge } from "@/components/ui/badge";
 
 const Projects = () => {
-  const projects: Project[] = [
+  const projects = [
     {
-      title: "Pipeline de Traitement Temps Réel",
-      period: "Février 2025",
-      location: "EPSI Puteaux - La Défense",
-      description: "Mise en place d'un pipeline de traitement en temps réel avec Kafka et Spark",
-      details: [
-        "Développement d'un Producer pour l'envoi de données en continu",
-        "Implémentation d'un Consumer pour l'ingestion et l'analyse",
-        "Traitement des flux avec Spark Streaming",
-        "Déploiement et orchestration via Docker"
-      ],
-      technologies: ["Kafka", "Spark", "Scala", "Docker", "Spark Streaming"],
-      icon: <GitBranch size={24} />
+      title: "Système de Recommandation E-commerce",
+      description: "Développement d'un système de recommandation basé sur le machine learning pour une plateforme e-commerce, augmentant les ventes croisées de 23%.",
+      image: "/placeholder.svg",
+      tags: ["Python", "TensorFlow", "AWS", "Recommender Systems"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
     },
     {
-      title: "Architecture Décisionnelle VTC",
-      period: "Octobre 2024 - Décembre 2024",
-      location: "EPSI Puteaux - La Défense",
-      description: "Mise en place d'une architecture décisionnelle complète pour l'analyse des données VTC de New York",
-      details: [
-        "Automatisation de la collecte dans un Data Lake (Python, MinIO)",
-        "Développement d'un pipeline ETL avec Amphi.ai",
-        "Construction d'un Data Mart en flocon",
-        "Création d'un tableau de bord Power BI",
-        "Orchestration avec Apache Airflow"
-      ],
-      technologies: ["Python", "MinIO", "PostgreSQL", "Power BI", "Apache Airflow", "ETL"],
-      icon: <LineChart size={24} />
+      title: "Plateforme d'Analyse Prédictive",
+      description: "Création d'une plateforme d'analyse prédictive pour le secteur financier, permettant la détection de fraudes en temps réel avec une précision de 94%.",
+      image: "/placeholder.svg",
+      tags: ["Python", "Scikit-learn", "SQL", "Tableau", "Machine Learning"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
     },
     {
-      title: "Configuration Cluster Hadoop",
-      description: "Mise en place et configuration d'un cluster Hadoop sur Docker",
-      details: [
-        "Configuration des NameNodes et DataNodes",
-        "Mise en place de YARN pour la gestion des ressources",
-        "Déploiement sur conteneurs Docker",
-        "Configuration de l'environnement distribué"
-      ],
-      technologies: ["Hadoop", "YARN", "Docker", "Linux"],
-      icon: <Server size={24} />
+      title: "Dashboard Marketing Analytics",
+      description: "Conception et développement d'un dashboard interactif d'analytics marketing intégrant des KPIs avancés et des visualisations personnalisées.",
+      image: "/placeholder.svg",
+      tags: ["Power BI", "Python", "Data Visualization", "Marketing Analytics"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
     },
     {
-      title: "Application de Gestion de Notes",
-      description: "Conception et développement d'une application complète de gestion de notes pour établissement scolaire",
-      details: [
-        "Système de saisie et stockage des notes",
-        "Calcul automatique des moyennes",
-        "Génération de rapports personnalisés",
-        "Interface utilisateur intuitive",
-        "Système de notifications"
-      ],
-      technologies: ["Java", "Spring Boot", "MySQL", "React", "REST API"],
-      icon: <Calculator size={24} />
+      title: "Analyse de Sentiment pour Réseaux Sociaux",
+      description: "Implémentation d'un système d'analyse de sentiment en temps réel pour surveiller la réputation de marque sur les réseaux sociaux.",
+      image: "/placeholder.svg",
+      tags: ["NLP", "Python", "Deep Learning", "Social Media Analytics"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
+    },
+    {
+      title: "Optimisation de Supply Chain",
+      description: "Développement d'un modèle d'optimisation de supply chain réduisant les coûts logistiques de 18% tout en améliorant les délais de livraison.",
+      image: "/placeholder.svg",
+      tags: ["Python", "Optimization", "Supply Chain", "Data Modeling"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
+    },
+    {
+      title: "Segmentation Clientèle Avancée",
+      description: "Analyse et segmentation avancée de la base clients d'une entreprise retail, permettant des campagnes marketing ciblées et personnalisées.",
+      image: "/placeholder.svg",
+      tags: ["Clustering", "Python", "Customer Analytics", "Marketing"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      }
     }
   ];
 
-  return (
-    <section id="projects" className="py-24 bg-section">
-      <div className="section-container">
-        <div className="animate-on-scroll">
-          <h2 className="section-title">Projets</h2>
-          <p className="section-subtitle">
-            Mes projets significatifs en développement et data engineering
-          </p>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1
+      }
+    }
+  };
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
-            ))}
-          </div>
-        </div>
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
+  return (
+    <section id="projects" className="py-20 bg-section">
+      <div className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Mes Projets</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Découvrez les projets sur lesquels j'ai travaillé et qui démontrent mes compétences en analyse de données et en intelligence artificielle.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-card rounded-lg shadow-sm border border-border overflow-hidden hover:shadow-md transition-shadow"
+            >
+              <div className="h-48 bg-muted relative overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
+                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag, i) => (
+                    <Badge key={i} variant="secondary">{tag}</Badge>
+                  ))}
+                </div>
+                <div className="flex space-x-4">
+                  <a 
+                    href={project.links.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center text-sm font-medium text-primary hover:underline"
+                  >
+                    <Github className="h-4 w-4 mr-1" />
+                    Code
+                  </a>
+                  <a 
+                    href={project.links.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center text-sm font-medium text-primary hover:underline"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-1" />
+                    Demo
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

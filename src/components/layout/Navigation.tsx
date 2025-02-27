@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,22 +22,28 @@ const Navigation = () => {
     )}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="text-lg font-semibold">
+          <Link to="/" className="text-lg font-semibold">
             Portfolio
-          </a>
+          </Link>
           <div className="hidden sm:flex space-x-8">
-            <a href="#about" className="text-sm hover:text-primary transition-colors">
+            <Link to="/about" className="text-sm hover:text-primary transition-colors">
               À propos
-            </a>
-            <a href="#experience" className="text-sm hover:text-primary transition-colors">
+            </Link>
+            <Link to="/experience" className="text-sm hover:text-primary transition-colors">
               Expérience
-            </a>
-            <a href="#skills" className="text-sm hover:text-primary transition-colors">
+            </Link>
+            <Link to="/projects" className="text-sm hover:text-primary transition-colors">
+              Projets
+            </Link>
+            <Link to="/certifications" className="text-sm hover:text-primary transition-colors">
+              Certifications
+            </Link>
+            <Link to="/skills" className="text-sm hover:text-primary transition-colors">
               Compétences
-            </a>
-            <a href="#contact" className="text-sm hover:text-primary transition-colors">
+            </Link>
+            <Link to="/contact" className="text-sm hover:text-primary transition-colors">
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>

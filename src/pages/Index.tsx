@@ -5,6 +5,9 @@ import Hero from '@/components/sections/Hero';
 
 const Index = () => {
   useEffect(() => {
+    // Ajout d'un log pour confirmer le chargement de la page
+    console.log('Page d\'accueil chargée');
+    
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

@@ -105,6 +105,7 @@ const Certifications = () => {
     {
       title: "Les fondements du data engineering",
       issuer: "Birdify - LMSAFP account",
+      date: "2024",
       id: "a752adc2306a8c7c4b983fdab96550db647f55fbffcfd45b7ff0b57223003072",
       skills: ["Big data", "Ingénierie des données"]
     }

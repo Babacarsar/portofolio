@@ -2,11 +2,12 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
+import { Helmet } from 'react-helmet';
 
 const Index = () => {
   useEffect(() => {
     // Ajout d'un log pour confirmer le chargement de la page
-    console.log('Page d\'accueil chargée');
+    console.log('Page d\'accueil chargée avec une modification significative');
     
     const observerCallback: IntersectionObserverCallback = (entries) => {
       entries.forEach(entry => {
@@ -30,9 +31,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <main>
+      <main className="bg-gradient-to-b from-background to-background/50">
         <Hero />
       </main>
+      <footer className="py-4 text-center text-sm text-muted-foreground bg-background">
+        <p>© {new Date().getFullYear()} - Portfolio Data Analyst & IA - Tous droits réservés</p>
+      </footer>
     </div>
   );
 };

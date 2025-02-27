@@ -1,52 +1,82 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Calendar, ExternalLink } from 'lucide-react';
+import { Award, Calendar, ExternalLink, Shield, Database, FileCode, FileSpreadsheet, Briefcase } from 'lucide-react';
 import { Separator } from "@/components/ui/separator";
 
 const Certifications = () => {
   const certifications = [
     {
-      title: "TensorFlow Developer Certificate",
-      issuer: "Google",
-      date: "Avril 2023",
-      description: "Certification validant l'expertise avancée en développement de modèles de machine learning et deep learning avec TensorFlow.",
-      link: "https://www.tensorflow.org/certificate"
+      title: "Devenir un expert de Power Bi - La formation complète",
+      issuer: "Udemy",
+      date: "Février 2025",
+      description: "Formation complète sur Microsoft Power BI incluant Power Query et des techniques avancées d'analyse de données.",
+      id: "UC-b1419a6e-5e1e-4fc2-b1a1-3da8a089a717",
+      skills: ["Microsoft Power BI", "Microsoft Power Query"],
+      icon: <FileCode className="h-8 w-8 text-primary mr-3" />
     },
     {
-      title: "AWS Certified Data Analytics - Specialty",
-      issuer: "Amazon Web Services",
-      date: "Janvier 2023",
-      description: "Certification attestant des compétences en conception et implémentation de solutions d'analyse de données sur AWS.",
-      link: "https://aws.amazon.com/certification/certified-data-analytics-specialty/"
+      title: "CI - Piloter l'informatique décisionnelle d'un SI [EISI I1]",
+      issuer: "PRO-ALTERNA",
+      date: "Janvier 2025",
+      description: "Certification spécialisée dans le pilotage de l'informatique décisionnelle des systèmes d'information.",
+      id: "7095641544399047",
+      skills: ["Analyses Big Data", "Science des données", "Intelligence artificielle (IA)", "Système d'information"],
+      icon: <Briefcase className="h-8 w-8 text-primary mr-3" />
     },
     {
-      title: "Professional Data Scientist",
-      issuer: "DataCamp",
-      date: "Septembre 2022",
-      description: "Certification validant les compétences en science des données, incluant la maîtrise de Python, SQL, et les techniques avancées d'analyse de données.",
-      link: "https://www.datacamp.com/certification"
+      title: "Dataiku ML Practitioner",
+      issuer: "Dataiku",
+      date: "Décembre 2024",
+      description: "Certification validant les compétences pratiques en machine learning sur la plateforme Dataiku.",
+      id: "ht3asax326xx",
+      skills: [],
+      icon: <Award className="h-8 w-8 text-primary mr-3" />
     },
     {
-      title: "Deep Learning Specialization",
-      issuer: "DeepLearning.AI",
-      date: "Juin 2022",
-      description: "Spécialisation complète en deep learning, incluant les réseaux de neurones, l'amélioration des algorithmes de deep learning, et la structuration de projets d'IA.",
-      link: "https://www.deeplearning.ai/deep-learning-specialization/"
+      title: "Excel : Analyse de données avec Power Query (Microsoft 365)",
+      issuer: "Birdify - LMSAFP account",
+      date: "Décembre 2024",
+      description: "Certificat d'accomplissement sur l'analyse de données avec Microsoft Power Query et Excel.",
+      id: "93c82716b25e33bd8160669ca3b18011e88f71d1a16936d40932af986994d672",
+      skills: ["Microsoft Power Query", "Microsoft Excel"],
+      icon: <FileSpreadsheet className="h-8 w-8 text-primary mr-3" />
     },
     {
-      title: "Machine Learning Engineer Nanodegree",
-      issuer: "Udacity",
-      date: "Mars 2022",
-      description: "Programme intensif couvrant les fondements et applications avancées du machine learning dans des contextes réels d'entreprise.",
-      link: "https://www.udacity.com/course/machine-learning-engineer-nanodegree--nd009t"
+      title: "Apprendre l'analyse des données Partie 2 : Étendre et appliquer les connaissances de base",
+      issuer: "Birdify - LMSAFP account",
+      date: "Novembre 2024",
+      description: "Formation avancée sur l'analyse de données, étendant les connaissances fondamentales.",
+      id: "e35d84a09101e88db089531c68f6d38aa359995240348aa525dd6cbe05c2547b",
+      skills: [],
+      icon: <Award className="h-8 w-8 text-primary mr-3" />
     },
     {
-      title: "Tableau Desktop Specialist",
-      issuer: "Tableau",
-      date: "Novembre 2021",
-      description: "Certification attestant de la maîtrise des fonctionnalités de Tableau Desktop pour l'analyse et la visualisation de données.",
-      link: "https://www.tableau.com/learn/certification/desktop-specialist"
+      title: "Dataiku Advanced Designer",
+      issuer: "Dataiku",
+      date: "Novembre 2024",
+      description: "Certification de niveau avancé sur la plateforme Dataiku, axée sur la conception de projets d'analyse de données complexes.",
+      id: "ojs8mya7re47",
+      skills: ["Outils de collaboration", "Assurance qualité des données"],
+      icon: <Shield className="h-8 w-8 text-primary mr-3" />
+    },
+    {
+      title: "Dataiku Core Designer",
+      issuer: "Dataiku",
+      date: "Novembre 2024",
+      description: "Certification fondamentale sur la plateforme Dataiku, couvrant les bases de la conception de projets de données.",
+      id: "myckyaxbr6bq",
+      skills: ["Bases de données", "Extract, Transform, Load (ETL)", "Analyses Big Data"],
+      icon: <Database className="h-8 w-8 text-primary mr-3" />
+    },
+    {
+      title: "Les fondements du data engineering",
+      issuer: "Birdify - LMSAFP account",
+      date: "",
+      description: "Formation sur les fondamentaux de l'ingénierie des données et les concepts de big data.",
+      id: "a752adc2306a8c7c4b983fdab96550db647f55fbffcfd45b7ff0b57223003072",
+      skills: ["Big data", "Ingénierie des données"],
+      icon: <Database className="h-8 w-8 text-primary mr-3" />
     }
   ];
 
@@ -98,29 +128,42 @@ const Certifications = () => {
               className="bg-card p-6 rounded-lg shadow-sm border border-border hover:shadow-md transition-shadow"
             >
               <div className="flex items-center mb-4">
-                <Award className="h-8 w-8 text-primary mr-3" />
+                {certification.icon}
                 <h3 className="font-semibold text-xl">{certification.title}</h3>
               </div>
               <Separator className="mb-4" />
               <div className="mb-4">
                 <div className="font-medium">{certification.issuer}</div>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  <span>{certification.date}</span>
-                </div>
+                {certification.date && (
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Calendar className="h-4 w-4 mr-1" />
+                    <span>{certification.date}</span>
+                  </div>
+                )}
               </div>
               <p className="text-muted-foreground mb-4">
                 {certification.description}
               </p>
-              <a 
-                href={certification.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center text-sm font-medium text-primary hover:underline"
-              >
-                <ExternalLink className="h-4 w-4 mr-1" />
-                Voir la certification
-              </a>
+              
+              {certification.id && (
+                <div className="mb-4">
+                  <div className="text-sm font-medium">ID de certification:</div>
+                  <div className="text-sm text-muted-foreground break-all">{certification.id}</div>
+                </div>
+              )}
+              
+              {certification.skills && certification.skills.length > 0 && (
+                <div className="mb-4">
+                  <div className="text-sm font-medium mb-1">Compétences:</div>
+                  <div className="flex flex-wrap gap-1">
+                    {certification.skills.map((skill, idx) => (
+                      <span key={idx} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>

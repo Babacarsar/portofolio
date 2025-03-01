@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Calendar } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -54,7 +54,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Email</h4>
-                  <p className="text-muted-foreground">contact@example.com</p>
+                  <p className="text-muted-foreground">ba66bacar@gmail.com</p>
                 </div>
               </div>
               
@@ -64,7 +64,17 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Téléphone</h4>
-                  <p className="text-muted-foreground">+33 6 12 34 56 78</p>
+                  <p className="text-muted-foreground">07 75 80 67 99</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <div className="bg-primary/10 p-3 rounded-full mr-4">
+                  <Calendar className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">Âge</h4>
+                  <p className="text-muted-foreground">22 ans</p>
                 </div>
               </div>
               
@@ -83,7 +93,7 @@ const Contact = () => {
               <h4 className="font-medium mb-3">Réseaux Sociaux</h4>
               <div className="flex space-x-4">
                 <a 
-                  href="https://linkedin.com" 
+                  href="https://www.linkedin.com/in/babacar-sarr-a3888a247" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-card hover:bg-muted p-3 rounded-full transition-colors"
@@ -91,20 +101,12 @@ const Contact = () => {
                   <Linkedin className="h-5 w-5 text-primary" />
                 </a>
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/Babacarsar" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-card hover:bg-muted p-3 rounded-full transition-colors"
                 >
                   <Github className="h-5 w-5 text-primary" />
-                </a>
-                <a 
-                  href="https://twitter.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="bg-card hover:bg-muted p-3 rounded-full transition-colors"
-                >
-                  <Twitter className="h-5 w-5 text-primary" />
                 </a>
               </div>
             </div>

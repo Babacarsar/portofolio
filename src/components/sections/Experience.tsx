@@ -1,45 +1,69 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, Briefcase, Code, Globe, Database, ChartBar } from 'lucide-react';
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Senior Data Analyst",
-      company: "TechInnovate Solutions",
-      period: "2021 - Présent",
-      location: "Paris, France",
+      title: "Développeur front-end",
+      company: "Competences221",
+      period: "Août 2024 - Septembre 2024",
+      location: "Sur site",
       description: [
-        "Direction d'une équipe de 3 analystes data pour des projets d'intelligence d'affaires",
-        "Conception et mise en œuvre d'algorithmes de machine learning pour la prévision des ventes, augmentant la précision des prévisions de 28%",
-        "Développement d'une solution d'analyse de données en temps réel qui a permis de réduire les temps de traitement de 65%",
-        "Collaboration avec les équipes produit pour intégrer des insights data dans la roadmap produit"
-      ]
+        "Développement de composants dynamiques avec Angular pour la gestion des offres d'emploi",
+        "Création d'interfaces responsives adaptées à différents appareils (desktop, mobile, tablette) avec Bootstrap",
+        "Intégration des API REST et gestion des requêtes HTTP via HttpClient",
+        "Implémentation de formulaires réactifs (Reactive Forms) avec validations avancées",
+        "Collaboration avec l'équipe backend utilisant Node.js"
+      ],
+      skills: ["MySQL", "API", "JavaScript", "Architecture logicielle", "Développement informatique", "AngularJS"],
+      type: "Freelance"
     },
     {
-      title: "Data Analyst",
-      company: "DataVision Corp",
-      period: "2018 - 2021",
-      location: "Lyon, France",
+      title: "Analyste de données",
+      company: "Malick Galaxie Groupe",
+      period: "Novembre 2023 - Mai 2024",
+      location: "Sur site",
       description: [
-        "Analyse de grandes quantités de données client pour identifier des tendances et opportunités commerciales",
-        "Création de dashboards interactifs avec Tableau, améliorant la prise de décision des équipes commerciales",
-        "Mise en œuvre de modèles prédictifs pour l'optimisation des campagnes marketing, augmentant le ROI de 35%",
-        "Collaboration avec les équipes IT pour améliorer les processus de collecte et de stockage des données"
-      ]
+        "Enquête sur l'évaluation des effets du Projet de Désenclavement des Zones de Production (PDZP)",
+        "Conception de questionnaires électroniques sous kobotoolbox et paramétrage sous kobocollect",
+        "Suivi à distance de la collecte de données et transfert des données vers Microsoft Excel",
+        "Apurement des données avec Power Query et traitement avec les tableaux dynamiques d'Excel",
+        "Création de graphiques sous Excel et Power BI et rédaction de rapports d'analyse détaillés"
+      ],
+      skills: ["Analyse des données", "Collecte de données", "Microsoft Excel", "Microsoft Power BI", "kobotoolbox", "Microsoft Power Query"],
+      type: "Stage"
     },
     {
-      title: "Data Analyst Junior",
-      company: "AnalyticsPro",
-      period: "2016 - 2018",
-      location: "Bordeaux, France",
+      title: "Développeur web",
+      company: "Malick Galaxie Groupe",
+      period: "Janvier 2022 - Juin 2022",
+      location: "Sur site",
       description: [
-        "Analyse des données de vente et des tendances du marché pour les rapports trimestriels",
-        "Automatisation des processus de reporting avec Python, réduisant le temps de production de 75%",
-        "Nettoyage et préparation des données pour les analyses avancées",
-        "Support aux équipes marketing dans l'interprétation des résultats d'analyse"
-      ]
+        "Création et personnalisation de thèmes WordPress",
+        "Intégration de plugins et fonctionnalités spécifiques selon les besoins",
+        "Optimisation des performances des sites WordPress pour améliorer le référencement",
+        "Mise en place de stratégies de référencement naturel (SEO)",
+        "Développement de sites responsives et gestion de la sécurité par des mises à jour régulières"
+      ],
+      skills: ["JavaScript", "scriptcase", "Développement informatique", "WordPress", "PHP", "Bases de données", "kobotoolbox", "Talend"],
+      type: "Stage"
+    },
+    {
+      title: "Développeur site web",
+      company: "Foundation 1 SN",
+      period: "Avril 2021 - Mai 2021",
+      location: "Sur site",
+      description: [
+        "Collaboration avec une équipe de designers pour créer une interface utilisateur intuitive",
+        "Conception et développement de sites web",
+        "Optimisation des performances des sites web pour une meilleure expérience utilisateur",
+        "Intégration de plugins et fonctionnalités personnalisées selon les besoins clients",
+        "Gestion de la maintenance et des mises à jour régulières des sites web"
+      ],
+      skills: ["MySQL", "Développement informatique", "WordPress", "Bases de données", "Optimisation pour les moteurs de recherche (SEO)"],
+      type: "Stage"
     }
   ];
 
@@ -60,6 +84,12 @@ const Experience = () => {
       y: 0,
       transition: { duration: 0.8 }
     }
+  };
+
+  const getIcon = (title) => {
+    if (title.toLowerCase().includes('développeur')) return <Code className="h-5 w-5 text-primary" />;
+    if (title.toLowerCase().includes('analyste')) return <ChartBar className="h-5 w-5 text-primary" />;
+    return <Briefcase className="h-5 w-5 text-primary" />;
   };
 
   return (
@@ -102,8 +132,14 @@ const Experience = () => {
                 </div>
                 <div className="md:w-1/2 ml-8 md:ml-0 md:px-8 pb-8">
                   <div className="bg-card p-6 rounded-lg shadow-sm border border-border">
-                    <h3 className="text-xl font-semibold">{experience.title}</h3>
-                    <h4 className="text-primary font-medium mb-2">{experience.company}</h4>
+                    <div className="flex items-center mb-2">
+                      {getIcon(experience.title)}
+                      <h3 className="text-xl font-semibold ml-2">{experience.title}</h3>
+                    </div>
+                    <div className="flex items-center mb-2">
+                      <span className="text-primary font-medium">{experience.company}</span>
+                      <span className="ml-2 text-sm text-muted-foreground">({experience.type})</span>
+                    </div>
                     
                     <div className="flex flex-wrap text-sm text-muted-foreground mb-4">
                       <div className="flex items-center mr-4 mb-2">
@@ -116,11 +152,24 @@ const Experience = () => {
                       </div>
                     </div>
                     
-                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">
                       {experience.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
+
+                    {experience.skills && experience.skills.length > 0 && (
+                      <div className="mt-4">
+                        <h4 className="text-sm font-medium mb-2">Compétences:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {experience.skills.map((skill, i) => (
+                            <span key={i} className="bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>

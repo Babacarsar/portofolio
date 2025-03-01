@@ -1,11 +1,63 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Server, Database, FileCode, FileSpreadsheet, Terminal, Rocket } from 'lucide-react';
 import { Badge } from "@/components/ui/badge";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Atelier de traitement de données avec Spark, Kafka et Scala",
+      description: "Mise en place d'un pipeline de traitement en temps réel avec Kafka, Spark et Scala. Développement d'un Producer pour l'envoi de données en continu et d'un Consumer pour leur ingestion et analyse. Traitement des flux avec Spark Streaming pour transformation et exploitation en temps réel. Déploiement et orchestration via Docker pour assurer scalabilité et performance.",
+      image: "/placeholder.svg",
+      tags: ["Apache Spark", "Apache Kafka", "Scala", "Docker", "Real-time Processing"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      },
+      date: "Février 2025",
+      location: "EPSI Puteaux - La Defense",
+      icon: <Server className="h-8 w-8 text-primary" />
+    },
+    {
+      title: "Atelier de déploiement d'une Architecture Décisionnelle",
+      description: "Automatisation de la collecte et du stockage des données VTC de New York (nov. 2022 - août 2022) dans un Data Lake via des scripts Python et MinIO. Développement d'un pipeline ETL avec Amphi.ai pour alimenter une base PostgreSQL, suivi de la construction d'un Data Mart en flocon. Création d'un tableau de bord interactif Power BI pour l'analyse et la prise de décision, avec optimisation des mises à jour via Apache Airflow.",
+      image: "/placeholder.svg",
+      tags: ["Python", "PostgreSQL", "Power BI", "Apache Airflow", "ETL", "Data Lake"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      },
+      date: "Octobre 2024 - Décembre 2024",
+      location: "EPSI Puteaux - La Défense",
+      icon: <Database className="h-8 w-8 text-primary" />
+    },
+    {
+      title: "Atelier Hadoop avec configuration Docker",
+      description: "Configuration d'un cluster Hadoop complet sur Docker, incluant la mise en place des namenodes et datanodes. Configuration du YARN pour la gestion optimale des ressources. Implémentation de techniques avancées pour assurer la haute disponibilité et le traitement distribué des données massives.",
+      image: "/placeholder.svg",
+      tags: ["Hadoop", "Docker", "YARN", "Big Data", "Distributed Systems"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      },
+      date: "2024",
+      location: "EPSI",
+      icon: <Terminal className="h-8 w-8 text-primary" />
+    },
+    {
+      title: "Application de Gestion de Notes",
+      description: "Conception et implémentation d'une application complète de gestion de notes permettant de saisir, stocker, gérer et analyser les notes des étudiants. L'application inclut des fonctionnalités pour calculer des moyennes, générer des rapports personnalisés, suivre la progression des étudiants et envoyer des notifications aux utilisateurs, avec une interface utilisateur intuitive.",
+      image: "/placeholder.svg",
+      tags: ["UX/UI Design", "Database", "Frontend", "Backend", "Education Tech"],
+      links: {
+        github: "https://github.com",
+        live: "https://example.com"
+      },
+      date: "2024",
+      location: "Univers Professionnel (Unipro)",
+      icon: <FileCode className="h-8 w-8 text-primary" />
+    },
     {
       title: "Système de Recommandation E-commerce",
       description: "Développement d'un système de recommandation basé sur le machine learning pour une plateforme e-commerce, augmentant les ventes croisées de 23%.",
@@ -14,17 +66,8 @@ const Projects = () => {
       links: {
         github: "https://github.com",
         live: "https://example.com"
-      }
-    },
-    {
-      title: "Plateforme d'Analyse Prédictive",
-      description: "Création d'une plateforme d'analyse prédictive pour le secteur financier, permettant la détection de fraudes en temps réel avec une précision de 94%.",
-      image: "/placeholder.svg",
-      tags: ["Python", "Scikit-learn", "SQL", "Tableau", "Machine Learning"],
-      links: {
-        github: "https://github.com",
-        live: "https://example.com"
-      }
+      },
+      icon: <Rocket className="h-8 w-8 text-primary" />
     },
     {
       title: "Dashboard Marketing Analytics",
@@ -34,37 +77,8 @@ const Projects = () => {
       links: {
         github: "https://github.com",
         live: "https://example.com"
-      }
-    },
-    {
-      title: "Analyse de Sentiment pour Réseaux Sociaux",
-      description: "Implémentation d'un système d'analyse de sentiment en temps réel pour surveiller la réputation de marque sur les réseaux sociaux.",
-      image: "/placeholder.svg",
-      tags: ["NLP", "Python", "Deep Learning", "Social Media Analytics"],
-      links: {
-        github: "https://github.com",
-        live: "https://example.com"
-      }
-    },
-    {
-      title: "Optimisation de Supply Chain",
-      description: "Développement d'un modèle d'optimisation de supply chain réduisant les coûts logistiques de 18% tout en améliorant les délais de livraison.",
-      image: "/placeholder.svg",
-      tags: ["Python", "Optimization", "Supply Chain", "Data Modeling"],
-      links: {
-        github: "https://github.com",
-        live: "https://example.com"
-      }
-    },
-    {
-      title: "Segmentation Clientèle Avancée",
-      description: "Analyse et segmentation avancée de la base clients d'une entreprise retail, permettant des campagnes marketing ciblées et personnalisées.",
-      image: "/placeholder.svg",
-      tags: ["Clustering", "Python", "Customer Analytics", "Marketing"],
-      links: {
-        github: "https://github.com",
-        live: "https://example.com"
-      }
+      },
+      icon: <FileSpreadsheet className="h-8 w-8 text-primary" />
     }
   ];
 
@@ -107,7 +121,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
             <motion.div
@@ -123,8 +137,21 @@ const Projects = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="font-semibold text-xl mb-2">{project.title}</h3>
+                <div className="flex items-center mb-3">
+                  {project.icon}
+                  <h3 className="font-semibold text-xl ml-3">{project.title}</h3>
+                </div>
+                
+                {(project.date || project.location) && (
+                  <div className="mb-3 text-sm text-muted-foreground">
+                    {project.date && <span className="font-medium">{project.date}</span>}
+                    {project.date && project.location && <span> • </span>}
+                    {project.location && <span>{project.location}</span>}
+                  </div>
+                )}
+
                 <p className="text-muted-foreground mb-4">{project.description}</p>
+                
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
                     <Badge key={i} variant="secondary">{tag}</Badge>

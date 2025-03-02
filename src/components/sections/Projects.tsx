@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, Server, Database, FileCode, Terminal } from 'lucide-react';
@@ -79,7 +80,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-section">
+    <section id="projects" className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +88,7 @@ const Projects = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Mes Projets</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Mes Projets</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Découvrez les projets sur lesquels j'ai travaillé et qui démontrent mes compétences en analyse de données et en intelligence artificielle.
           </p>
@@ -98,25 +99,35 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-card rounded-lg shadow-sm border border-border overflow-hidden hover:shadow-md transition-shadow"
+              whileHover={{ y: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="bg-card rounded-lg shadow-sm border border-border overflow-hidden hover:shadow-xl transition-all duration-300"
             >
-              <div className="h-48 bg-muted relative overflow-hidden">
+              <div className="h-48 bg-muted relative overflow-hidden image-zoom">
                 <img 
                   src={project.image} 
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="p-4 text-white">
+                    <div className="font-bold">{project.title}</div>
+                    {project.date && <div className="text-sm text-white/80">{project.date}</div>}
+                  </div>
+                </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  {project.icon}
-                  <h3 className="font-semibold text-xl ml-3">{project.title}</h3>
+                  <div className="bg-primary/10 p-2 rounded-full mr-3">
+                    {project.icon}
+                  </div>
+                  <h3 className="font-semibold text-xl">{project.title}</h3>
                 </div>
                 
                 {(project.date || project.location) && (
@@ -127,32 +138,36 @@ const Projects = () => {
                   </div>
                 )}
 
-                <p className="text-muted-foreground mb-4">{project.description}</p>
+                <p className="text-muted-foreground mb-4 line-clamp-3 hover:line-clamp-none transition-all duration-300">
+                  {project.description}
+                </p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag, i) => (
-                    <Badge key={i} variant="secondary">{tag}</Badge>
+                    <Badge key={i} variant="secondary" className="hover-lift">{tag}</Badge>
                   ))}
                 </div>
                 <div className="flex space-x-4">
-                  <a 
+                  <motion.a 
                     href={project.links.github} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center text-sm font-medium text-primary hover:underline"
+                    whileHover={{ x: 3 }}
                   >
                     <Github className="h-4 w-4 mr-1" />
                     Code
-                  </a>
-                  <a 
+                  </motion.a>
+                  <motion.a 
                     href={project.links.live} 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center text-sm font-medium text-primary hover:underline"
+                    whileHover={{ x: 3 }}
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
                     Demo
-                  </a>
+                  </motion.a>
                 </div>
               </div>
             </motion.div>

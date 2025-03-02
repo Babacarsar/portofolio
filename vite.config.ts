@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/", // Changez ceci pour votre nom de repo si vous déployez sur GitHub Pages (ex: "/portfolio/")
+  base: "/portfolio/", // Base URL pour GitHub Pages (REPO_NAME)
   plugins: [
     react(),
     mode === 'development' &&

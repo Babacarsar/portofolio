@@ -1,4 +1,23 @@
-# Welcome to your Lovable project
+
+# Portfolio - Site Personnel
+
+## Déploiement sur GitHub Pages
+
+Pour déployer ce site sur GitHub Pages, suivez ces étapes:
+
+1. Créez un repository GitHub nommé "portfolio" si ce n'est pas déjà fait.
+2. Modifiez le fichier `deploy.sh` pour remplacer `votre-nom-utilisateur` par votre nom d'utilisateur GitHub.
+3. Exécutez le script de déploiement:
+
+```sh
+# Rendre le script exécutable si nécessaire
+chmod +x deploy.sh
+
+# Exécuter le script
+./deploy.sh
+```
+
+4. Votre site sera déployé à l'adresse: `https://[votre-nom-utilisateur].github.io/portfolio/`
 
 ## Project info
 
@@ -36,34 +55,13 @@ npm i
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7b96f9c8-65b5-4974-8e4b-b7429c91c5e5) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- React Router

@@ -1,34 +1,41 @@
 
 #!/bin/bash
 
-# Build the project
+# Définir le nom du dépôt GitHub
+REPO_NAME="portfolio"
+GH_USER="votre-nom-utilisateur"
+
+# Build le projet
 echo "Building project..."
 npm run build
 
-# Move to the build directory
+# Se déplacer dans le répertoire de build
 cd dist
 
-# Create a .nojekyll file to bypass Jekyll processing
+# Créer un fichier .nojekyll pour éviter le traitement Jekyll
 touch .nojekyll
 
-# Create a CNAME file if you have a custom domain
-# echo "your-domain.com" > CNAME
-
-# Initialize git repository if it doesn't exist
+# Initialiser un dépôt git si ce n'est pas déjà fait
 if [ ! -d ".git" ]; then
   git init
   git checkout -b main
-  git add .
-  git commit -m "Initial commit"
 else
-  git add .
-  git commit -m "Update website"
+  # Assurez-vous d'être sur la branche principale
+  git checkout main || git checkout -b main
 fi
 
-# Add the GitHub repository as remote
-git remote add origin https://github.com/yourusername/your-repo-name.git
+# Ajouter tous les fichiers
+git add .
 
-# Force push to the gh-pages branch
+# Commettre les changements
+git commit -m "Deploy to GitHub Pages"
+
+# Ajouter le dépôt GitHub comme remote (si pas déjà fait)
+git remote add origin https://github.com/$GH_USER/$REPO_NAME.git 2>/dev/null || true
+
+# Forcer le push sur la branche gh-pages
+echo "Deploying to GitHub Pages..."
 git push -f origin main:gh-pages
 
 echo "Deployment complete!"
+echo "Votre site est maintenant disponible à: https://$GH_USER.github.io/$REPO_NAME/"

@@ -3,7 +3,7 @@
 
 # Définir le nom du dépôt GitHub
 REPO_NAME="portfolio"
-GH_USER="votre-nom-utilisateur"
+GH_USER="Babacarsar"
 
 # Build le projet
 echo "Building project..."

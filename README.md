@@ -6,7 +6,7 @@
 Pour déployer ce site sur GitHub Pages, suivez ces étapes:
 
 1. Créez un repository GitHub nommé "portfolio" si ce n'est pas déjà fait.
-2. Modifiez le fichier `deploy.sh` pour remplacer `votre-nom-utilisateur` par votre nom d'utilisateur GitHub.
+2. Le script de déploiement est déjà configuré avec votre nom d'utilisateur: Babacarsar.
 3. Exécutez le script de déploiement:
 
 ```sh
@@ -17,7 +17,7 @@ chmod +x deploy.sh
 ./deploy.sh
 ```
 
-4. Votre site sera déployé à l'adresse: `https://[votre-nom-utilisateur].github.io/portfolio/`
+4. Votre site sera déployé à l'adresse: `https://Babacarsar.github.io/portfolio/`
 
 ## Project info
 

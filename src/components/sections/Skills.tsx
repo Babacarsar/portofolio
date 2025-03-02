@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
 import { 
   Code, Database, BarChart, Terminal, Github, 
-  Server, Docker, FileSpreadsheet, Workflow, Brain,
+  Server, Dock, FileSpreadsheet, Workflow, Brain,
   Users, LineChart, CloudCog, ScrollText, BookOpen
 } from 'lucide-react';
 
@@ -210,7 +209,7 @@ const Skills = () => {
                 <span>Participation à des hackathons et événements tech</span>
               </li>
               <li className="flex items-center gap-2">
-                <Docker className="h-4 w-4 text-primary" />
+                <Dock className="h-4 w-4 text-primary" />
                 <span>Projets personnels d'automatisation et d'analyse</span>
               </li>
             </ul>

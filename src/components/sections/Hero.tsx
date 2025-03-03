@@ -104,7 +104,7 @@ const Hero = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
-              Découvrez les différentes facettes de mon profil professionnel à travers ces sections spécialement conçues
+              Découvrez les différentes facettes de mon profil professionnel à travers ces sections spécialement conçues pour vous
             </motion.p>
           </div>
 

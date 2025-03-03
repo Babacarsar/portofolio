@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Heart, Database, BarChart } from 'lucide-react';
@@ -27,7 +26,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img 
-              src="/photoidentite.jpeg" 
+              src={import.meta.env.BASE_URL + 'photoidentite.jpeg'} 
               alt="Photo professionnelle" 
               className="rounded-lg shadow-lg w-full max-w-md mx-auto"
             />

@@ -11,6 +11,12 @@ cd dist
 # Create a .nojekyll file to bypass Jekyll processing
 touch .nojekyll
 
+# Ensure 404.html is present in the build directory
+if [ ! -f "404.html" ]; then
+  echo "Copying 404.html to dist directory..."
+  cp ../public/404.html .
+fi
+
 # Create a CNAME file if you have a custom domain
 # echo "your-domain.com" > CNAME
 

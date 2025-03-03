@@ -18,6 +18,12 @@ chmod +x deploy.sh
 ```
 
 4. Votre site sera déployé à l'adresse: `https://Babacarsar.github.io/portfolio/`
+5. GitHub Pages peut prendre quelques minutes pour mettre à jour le site après le déploiement.
+
+### Résolution des problèmes courants
+
+- Si vous obtenez une erreur d'authentification, assurez-vous d'avoir configuré Git avec vos identifiants GitHub.
+- Si le site ne s'affiche pas correctement, vérifiez que le repository GitHub existe et que la branche gh-pages a été correctement créée.
 
 ## Project info
 

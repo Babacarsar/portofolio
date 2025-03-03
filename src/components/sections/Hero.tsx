@@ -78,7 +78,7 @@ const Hero = () => {
             className="relative w-64 h-64 md:w-72 md:h-72 mb-16"
           >
             <img
-              src="photoidentite.jpeg"
+              src="/photoidentite.jpeg"
               alt="Portrait professionnel"
               className="rounded-full object-cover w-full h-full shadow-lg border-4 border-white"
             />

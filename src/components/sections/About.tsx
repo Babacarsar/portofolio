@@ -27,7 +27,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <img 
-              src="/dist/photoidentite.jpeg" 
+              src="/public/photoidentite.jpeg" 
               alt="Photo professionnelle" 
               className="rounded-lg shadow-lg w-full max-w-md mx-auto"
             />

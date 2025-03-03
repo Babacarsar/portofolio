@@ -9,8 +9,11 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    // Ajouter cette configuration pour rediriger toutes les requêtes vers index.html
+    // afin que React Router puisse gérer les routes côté client
+    historyApiFallback: true,
   },
-  base: "/", // Changez ceci pour votre nom de repo si vous déployez sur GitHub Pages (ex: "/portfolio/")
+  base: "/", // Base path pour l'application
   plugins: [
     react(),
     mode === 'development' &&

@@ -4,24 +4,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stunning-portfolio-highlight</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
+    <title>Portfolio - Data Analyst & IA</title>
+    <meta name="description" content="Portfolio professionnel de Data Analyst & IA" />
+    <meta name="author" content="Babacar Sar" />
+    <meta property="og:image" content="/portofolio/og-image.png" />
     
     <!-- Start Single Page Apps for GitHub Pages -->
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
+      // Cette section est pour le routage côté client sur GitHub Pages
       (function(l) {
-        if (l.search[1] === '/' ) {
+        if (l.search[1] === '?' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
           }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
+          
+          // Extraire les parties p et q des paramètres de requête
+          var params = {};
+          decoded.split('&').forEach(function(param) {
+            var parts = param.split('=');
+            if (parts.length > 1) {
+              params[parts[0]] = decodeURIComponent(parts[1]);
+            }
+          });
+          
+          // Reconstituer l'URL d'origine
+          var redirectTo = l.pathname;
+          if (params.p) {
+            redirectTo = params.p;
+          }
+          if (params.q) {
+            redirectTo += '?' + params.q;
+          }
+          if (l.hash) {
+            redirectTo += l.hash;
+          }
+          
+          window.history.replaceState(null, null, redirectTo);
         }
       }(window.location))
     </script>

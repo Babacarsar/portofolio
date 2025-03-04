@@ -8,19 +8,23 @@
     // Single Page Apps for GitHub Pages
     // MIT License
     // https://github.com/rafgraph/spa-github-pages
-    var pathSegmentsToKeep = 1;
+    var segmentCount = 1; // Ajusté à 1 pour le chemin /portofolio/
 
     var l = window.location;
+    var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+    var baseUrl = origin + '/portofolio/';
+    
+    // Rediriger vers la page d'accueil avec les paramètres d'URL appropriés
     l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+      baseUrl + '?p=' + 
+      l.pathname.slice(baseUrl.length - origin.length) +
+      (l.search ? '&q=' + l.search.slice(1) : '') +
       l.hash
     );
   </script>
 </head>
 <body>
-  Redirecting to portfolio...
+  <h2>Redirection vers le portfolio...</h2>
+  <p>Si vous n'êtes pas redirigé automatiquement, <a href="/portofolio/">cliquez ici</a>.</p>
 </body>
 </html>

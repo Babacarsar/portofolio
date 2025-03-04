@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirection to Portfolio</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafgraph/spa-github-pages
+    var segmentCount = 1; // Ajusté à 1 pour le chemin /portofolio/
+
+    var l = window.location;
+    var origin = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '');
+    var baseUrl = origin + '/portofolio/';
+    
+    // Rediriger vers la page d'accueil avec les paramètres d'URL appropriés
+    l.replace(
+      baseUrl + '?p=' + 
+      l.pathname.slice(baseUrl.length - origin.length) +
+      (l.search ? '&q=' + l.search.slice(1) : '') +
+      l.hash
+    );
+  </script>
+</head>
+<body>
+  <h2>Redirection vers le portfolio...</h2>
+  <p>Si vous n'êtes pas redirigé automatiquement, <a href="/portofolio/">cliquez ici</a>.</p>
+</body>
+</html>

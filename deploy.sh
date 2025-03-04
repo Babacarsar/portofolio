@@ -32,7 +32,7 @@ else
 fi
 
 # Add the GitHub repository as remote
-git remote add origin https://github.com/yourusername/your-repo-name.git
+git remote add origin https://github.com/babacarsar/portofolio.git
 
 # Force push to the gh-pages branch
 git push -f origin main:gh-pages

@@ -7,45 +7,196 @@ endobj
 <</Type /Pages /Kids [3 0 R] /Count 1>>
 endobj
 3 0 obj
-<</Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 612 792] /Contents 6 0 R>>
+<</Type /Page /Parent 2 0 R /Resources 4 0 R /MediaBox [0 0 595 842] /Contents 6 0 R>>
 endobj
 4 0 obj
 <<
 /Font <<
   /F1 5 0 R
+  /F2 7 0 R
+  /F3 9 0 R
 >>
 >>
 endobj
 5 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold>>
+endobj
+7 0 obj
 <</Type /Font /Subtype /Type1 /BaseFont /Helvetica>>
 endobj
+9 0 obj
+<</Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique>>
+endobj
 6 0 obj
-<</Length 128>>
+<</Length 3500>>
 stream
 BT
-/F1 24 Tf
-100 700 Td
+/F1 20 Tf
+40 800 Td
 (Babacar Sar) Tj
+/F2 11 Tf
+0 -20 Td
+(Analyste Data & Intelligence Artificielle) Tj
+/F2 10 Tf
+0 -15 Td
+(Paris, France \226 07 75 80 67 99 \226 ba66bacar@gmail.com) Tj
+0 -15 Td
+(www.linkedin.com/in/babacar-sarr-a3888a247 \226 github.com/Babacarsar) Tj
+
 /F1 14 Tf
-0 -50 Td
-(CV placeur - À remplacer par votre véritable CV) Tj
+-40 -40 Td
+(FORMATION) Tj
+/F3 10 Tf
+0 -20 Td
+(Master en Intelligence Artificielle & Management) Tj
+/F2 10 Tf
+0 -15 Td
+(ESIEE-IT \226 2022 - 2024) Tj
+0 -10 Td
+(Sp\351cialisation en algorithmes d'apprentissage, traitement de donn\351es, IA appliqu\351e au business) Tj
+
+/F3 10 Tf
+0 -20 Td
+(Licence en Informatique) Tj
+/F2 10 Tf
+0 -15 Td
+(\311cole Sup\351rieure Polytechnique \226 2019 - 2022) Tj
+0 -10 Td
+(Fondamentaux en programmation, structures de donn\351es, bases de donn\351es et algorithmes) Tj
+
+/F1 14 Tf
+0 -30 Td
+(COMP\311TENCES) Tj
+
+/F1 10 Tf
+0 -15 Td
+(Langages de programmation:) Tj
+/F2 10 Tf
+0 -15 Td
+(Python, R, SQL, JavaScript, Java) Tj
+
+/F1 10 Tf
+0 -15 Td
+(Data Science & IA:) Tj
+/F2 10 Tf
+0 -15 Td
+(Pandas, NumPy, Scikit-learn, TensorFlow, PyTorch, Matplotlib, Seaborn) Tj
+
+/F1 10 Tf
+0 -15 Td
+(Outils & Technologies:) Tj
+/F2 10 Tf
+0 -15 Td
+(Jupyter, Power BI, Tableau, Docker, Git, AWS, Azure, Google Cloud) Tj
+
+/F1 10 Tf
+0 -15 Td
+(Soft Skills:) Tj
+/F2 10 Tf
+0 -15 Td
+(Communication, Travail d'\351quipe, R\351solution de probl\350mes, Gestion de projet, Anglais professionnel) Tj
+
+/F1 14 Tf
+0 -30 Td
+(EXP\311RIENCE PROFESSIONNELLE) Tj
+
+/F1 10 Tf
+0 -20 Td
+(Stage Data Analyst) Tj
+/F3 10 Tf
+200 0 Td
+(TotalEnergies, Paris) Tj
+/F2 10 Tf
+150 0 Td
+(Juin 2023 - Pr\351sent) Tj
+/F2 10 Tf
+-350 -15 Td
+(\267 Analyse des donn\351es de consommation \351nerg\351tique pour identifier des opportunit\351s d'optimisation) Tj
+0 -15 Td
+(\267 D\351veloppement de tableaux de bord Power BI pour le suivi des KPIs en temps r\351el) Tj
+0 -15 Td
+(\267 Impl\351mentation d'algorithmes de pr\351diction pour anticiper les tendances de consommation) Tj
+
+/F1 10 Tf
+0 -20 Td
+(Projet acad\351mique - D\351tection de fraude) Tj
+/F3 10 Tf
+200 0 Td
+(ESIEE-IT) Tj
+/F2 10 Tf
+150 0 Td
+(Janvier - Mai 2023) Tj
+/F2 10 Tf
+-350 -15 Td
+(\267 Conception et impl\351mentation d'un mod\350le de machine learning pour d\351tecter les transactions frauduleuses) Tj
+0 -15 Td
+(\267 Analyse exploratoire et pr\351traitement de donn\351es transactionnelles) Tj
+0 -15 Td
+(\267 \311valuation des performances et optimisation des mod\350les (Random Forest, XGBoost, r\351seaux de neurones)) Tj
+
+/F1 14 Tf
+0 -30 Td
+(PROJETS PERSONNELS) Tj
+
+/F1 10 Tf
+0 -20 Td
+(Syst\350me de recommandation de films) Tj
+/F2 10 Tf
+0 -15 Td
+(\267 D\351veloppement d'un algorithme de filtrage collaboratif bas\351 sur Python et Scikit-learn) Tj
+0 -15 Td
+(\267 Int\351gration d'une API pour r\351cup\351rer les donn\351es de films et recommander des contenus pertinents) Tj
+
+/F1 10 Tf
+0 -20 Td
+(Analyse de sentiments sur Twitter) Tj
+/F2 10 Tf
+0 -15 Td
+(\267 Cr\351ation d'un mod\350le NLP pour analyser les sentiments dans les tweets li\351s \340 des sujets sp\351cifiques) Tj
+0 -15 Td
+(\267 Visualisation des r\351sultats sous forme de tableaux de bord interactifs) Tj
+
+/F1 14 Tf
+0 -30 Td
+(CERTIFICATIONS) Tj
+/F2 10 Tf
+0 -15 Td
+(\267 Microsoft Certified: Azure Data Scientist Associate) Tj
+0 -15 Td
+(\267 Google Professional Data Analytics Certificate) Tj
+0 -15 Td
+(\267 IBM Data Science Professional Certificate) Tj
+
+/F1 14 Tf
+0 -30 Td
+(LANGUES) Tj
+/F2 10 Tf
+0 -15 Td
+(\267 Fran\347ais: Natif) Tj
+0 -15 Td
+(\267 Anglais: Courant (TOEIC 850/990)) Tj
+0 -15 Td
+(\267 Wolof: Natif) Tj
 ET
 endstream
 endobj
 xref
-0 7
+0 10
 0000000000 65535 f
 0000000010 00000 n
 0000000056 00000 n
 0000000111 00000 n
 0000000212 00000 n
-0000000258 00000 n
-0000000326 00000 n
+0000000279 00000 n
+0000000443 00000 n
+0000000348 00000 n
+0000000000 00000 n
+0000000393 00000 n
 trailer
 <<
-/Size 7
+/Size 10
 /Root 1 0 R
 >>
 startxref
-505
+4000
 %%EOF

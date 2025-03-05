@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Award, Briefcase, Code, FileText, User, Zap } from 'lucide-react';
+import { ChevronDown, Award, Briefcase, Code, FileText, User, Zap, ArrowRight, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   const sectionCards = [
@@ -11,42 +12,42 @@ const Hero = () => {
       description: "Découvrez mon parcours et mes motivations professionnelles",
       icon: <User className="h-8 w-8 text-primary" />,
       link: "/about",
-      color: "from-blue-50 to-blue-100"
+      color: "from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20"
     },
     {
       title: "Expérience",
       description: "Explorez mon parcours professionnel et mes réalisations",
       icon: <Briefcase className="h-8 w-8 text-primary" />,
       link: "/experience",
-      color: "from-emerald-50 to-emerald-100"
+      color: "from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20"
     },
     {
       title: "Projets",
       description: "Consultez les projets concrets sur lesquels j'ai travaillé",
       icon: <Code className="h-8 w-8 text-primary" />,
       link: "/projects",
-      color: "from-violet-50 to-violet-100"
+      color: "from-violet-50 to-violet-100 dark:from-violet-900/20 dark:to-violet-800/20"
     },
     {
       title: "Certifications",
       description: "Parcourez mes certifications et qualifications professionnelles",
       icon: <Award className="h-8 w-8 text-primary" />,
       link: "/certifications",
-      color: "from-amber-50 to-amber-100"
+      color: "from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20"
     },
     {
       title: "Compétences",
       description: "Examinez mes compétences techniques et mon expertise",
       icon: <Zap className="h-8 w-8 text-primary" />,
       link: "/skills",
-      color: "from-rose-50 to-rose-100"
+      color: "from-rose-50 to-rose-100 dark:from-rose-900/20 dark:to-rose-800/20"
     },
     {
       title: "Contact",
       description: "Besoin de discuter d'un projet ? Contactez-moi dès maintenant !",
       icon: <FileText className="h-8 w-8 text-primary" />,
       link: "/contact",
-      color: "from-cyan-50 to-cyan-100"
+      color: "from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20"
     }
   ];
 
@@ -60,7 +61,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="text-center max-w-3xl mx-auto mb-12"
           >
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary to-purple-600 text-transparent bg-clip-text mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">
               Bienvenue sur mon Portfolio
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
@@ -69,6 +70,21 @@ const Hero = () => {
             <p className="text-lg text-muted-foreground mb-10">
               Je vous invite à explorer mon parcours, mes compétences et mes réalisations pour découvrir comment je peux contribuer à votre succès grâce à l'analyse avancée de données et l'IA.
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+              <Button asChild size="lg" className="group">
+                <Link to="/contact">
+                  Me contacter
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="group">
+                <a href={import.meta.env.BASE_URL + 'cv.pdf'} target="_blank" rel="noopener noreferrer">
+                  Télécharger mon CV
+                  <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+                </a>
+              </Button>
+            </div>
           </motion.div>
 
           <motion.div 
@@ -84,6 +100,15 @@ const Hero = () => {
             />
             <div className="absolute inset-0 rounded-full border-4 border-primary/20 border-dashed animate-[spin_20s_linear_infinite]"></div>
           </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 1 }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
+          >
+            <ChevronDown className="h-8 w-8 text-primary/60" />
+          </motion.div>
         </div>
       </div>
 
@@ -94,7 +119,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-3xl md:text-4xl font-bold mb-4"
+              className="text-3xl md:text-4xl font-bold mb-4 gradient-text"
             >
               Explorez Mon Portfolio
             </motion.h2>
@@ -116,7 +141,7 @@ const Hero = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="group"
+                className="group spotlight"
               >
                 <Link to={card.link} className="block h-full">
                   <div className={`bg-gradient-to-br ${card.color} p-6 rounded-lg shadow-sm h-full border border-border/50 hover:shadow-md transition-all`}>

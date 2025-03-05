@@ -12,14 +12,24 @@ import CertificationsPage from "./pages/CertificationsPage";
 import SkillsPage from "./pages/SkillsPage";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
+import BackToTop from "./components/layout/BackToTop";
 
-const queryClient = new QueryClient();
+// Créer une instance du client de requête
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+      staleTime: 5 * 60 * 1000, // 5 minutes
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner position="top-right" />
       <BrowserRouter basename="/portofolio">
         <Routes>
           <Route path="/" element={<Index />} />
@@ -31,6 +41,7 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <BackToTop />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

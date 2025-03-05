@@ -1,0 +1,56 @@
+
+@layer utilities {
+  /* Interactive elements */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent dark:from-blue-400 dark:to-purple-400;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-background to-secondary/50;
+  }
+
+  /* Button and form styling */
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200;
+  }
+
+  .button-animated {
+    @apply relative overflow-hidden transition-all duration-300 before:absolute before:inset-0 before:bg-primary/10 before:translate-x-[-100%] hover:before:translate-x-0 before:transition-transform before:duration-300;
+  }
+
+  /* Hover effects */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  }
+
+  .dark .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+  }
+
+  /* Scrollbar customization */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: theme('colors.muted.DEFAULT');
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.primary.DEFAULT');
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme('colors.primary.DEFAULT/0.8');
+  }
+}

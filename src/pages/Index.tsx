@@ -21,10 +21,11 @@ const Index = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.1
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
     });
 
-    document.querySelectorAll('.animate-on-scroll, .staggered-item').forEach(element => {
+    document.querySelectorAll('.animate-on-scroll, .staggered-item, .animate-when-visible').forEach(element => {
       observer.observe(element);
     });
 
@@ -38,7 +39,7 @@ const Index = () => {
         <meta name="description" content="Portfolio Data Analyst & IA - Page d'accueil" />
       </Helmet>
       <Navigation />
-      <main className="flex-grow bg-gradient-to-b from-background to-background/50">
+      <main className="flex-grow bg-gradient-to-b from-background to-background/50 pt-16">
         <Hero />
       </main>
       <Footer />

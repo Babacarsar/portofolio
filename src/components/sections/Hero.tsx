@@ -78,10 +78,11 @@ const Hero = () => {
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="group">
-                <a href={import.meta.env.BASE_URL + 'cv.pdf'} target="_blank" rel="noopener noreferrer">
-                  Télécharger mon CV
-                  <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              <Button asChild variant="outline" size="lg" className="group relative overflow-hidden bg-gradient-to-r from-background to-background hover:from-primary/10 hover:to-primary/5 transition-all">
+                <a href={import.meta.env.BASE_URL + 'cv.pdf'} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  <span className="relative z-10">Télécharger mon CV complet</span>
+                  <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform relative z-10" />
+                  <div className="absolute right-0 top-0 h-full w-0 bg-primary/10 transition-all duration-300 group-hover:w-full -z-0"></div>
                 </a>
               </Button>
             </div>

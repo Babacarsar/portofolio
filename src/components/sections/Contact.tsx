@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Github, Calendar, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Calendar, Send, Download } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -101,6 +101,27 @@ const Contact = () => {
                 <div>
                   <h4 className="font-medium">Localisation</h4>
                   <p className="text-muted-foreground">Paris, France</p>
+                </div>
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-start group"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="bg-primary/10 p-3 rounded-full mr-4 group-hover:bg-primary/20 transition-colors">
+                  <Download className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-medium">CV Complet</h4>
+                  <a 
+                    href={import.meta.env.BASE_URL + 'cv.pdf'} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Télécharger mon CV détaillé
+                  </a>
                 </div>
               </motion.div>
             </div>

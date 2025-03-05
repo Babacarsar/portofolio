@@ -2,15 +2,16 @@
 import React from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Certifications from '@/components/sections/Certifications';
+import PageTransition from '@/components/layout/PageTransition';
 
 const CertificationsPage = () => {
   return (
-    <div className="min-h-screen">
+    <PageTransition className="min-h-screen">
       <Navigation />
       <main className="pt-16">
         <Certifications />
       </main>
-    </div>
+    </PageTransition>
   );
 };
 

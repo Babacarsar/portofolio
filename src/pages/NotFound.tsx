@@ -2,6 +2,7 @@
 import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
+import PageTransition from "@/components/layout/PageTransition";
 
 const NotFound = () => {
   const location = useLocation();
@@ -14,7 +15,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-background/50">
+    <PageTransition className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-background/50">
       <div className="text-center max-w-md p-6">
         <h1 className="text-6xl font-bold text-primary mb-4">404</h1>
         <p className="text-xl text-muted-foreground mb-6">
@@ -28,7 +29,7 @@ const NotFound = () => {
           Retour à l'accueil
         </Link>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 

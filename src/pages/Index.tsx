@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
 import Footer from '@/components/layout/Footer';
-import BackToTop from '@/components/layout/BackToTop';
+import PageTransition from '@/components/layout/PageTransition';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -33,7 +33,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <PageTransition className="min-h-screen flex flex-col">
       <Helmet>
         <title>Portfolio | Accueil</title>
         <meta name="description" content="Portfolio Data Analyst & IA - Page d'accueil" />
@@ -43,8 +43,7 @@ const Index = () => {
         <Hero />
       </main>
       <Footer />
-      <BackToTop />
-    </div>
+    </PageTransition>
   );
 };
 

@@ -2,16 +2,15 @@
 import React from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Skills from '@/components/sections/Skills';
-import PageTransition from '@/components/layout/PageTransition';
 
 const SkillsPage = () => {
   return (
-    <PageTransition className="min-h-screen">
+    <div className="min-h-screen">
       <Navigation />
-      <main className="pt-16 md:pt-20">
+      <main className="pt-16">
         <Skills />
       </main>
-    </PageTransition>
+    </div>
   );
 };
 

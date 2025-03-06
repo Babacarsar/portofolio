@@ -51,26 +51,6 @@ const Hero = () => {
     }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.5 }
-    }
-  };
-
   return (
     <section id="home" className="min-h-screen bg-gradient-to-b from-background to-secondary/10">
       <div className="pt-20 pb-10 md:pt-0 md:pb-0 min-h-[80vh] flex items-center justify-center relative">
@@ -92,13 +72,13 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-              <Button asChild size="lg" className="group button-shimmer">
+              <Button asChild size="lg" className="group">
                 <Link to="/contact">
                   Me contacter
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="group relative overflow-hidden bg-gradient-to-r from-background to-background hover:from-primary/10 hover:to-primary/5 transition-all hover-glow">
+              <Button asChild variant="outline" size="lg" className="group relative overflow-hidden bg-gradient-to-r from-background to-background hover:from-primary/10 hover:to-primary/5 transition-all">
                 <a href={import.meta.env.BASE_URL + 'cv.pdf'} target="_blank" rel="noopener noreferrer" className="flex items-center">
                   <span className="relative z-10">Télécharger mon CV complet</span>
                   <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform relative z-10" />
@@ -117,20 +97,16 @@ const Hero = () => {
             <img
               src={import.meta.env.BASE_URL + 'photoidentite.jpeg'}
               alt="Portrait professionnel"
-              className="rounded-full object-cover w-full h-full shadow-lg border-4 border-white dark:border-gray-800"
+              className="rounded-full object-cover w-full h-full shadow-lg border-4 border-white"
             />
-            <motion.div 
-              className="absolute inset-0 rounded-full border-4 border-primary/20 border-dashed"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            ></motion.div>
+            <div className="absolute inset-0 rounded-full border-4 border-primary/20 border-dashed animate-[spin_20s_linear_infinite]"></div>
           </motion.div>
           
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-subtle-bounce hidden md:block"
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block"
           >
             <ChevronDown className="h-8 w-8 text-primary/60" />
           </motion.div>
@@ -143,7 +119,6 @@ const Hero = () => {
             <motion.h2 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="text-3xl md:text-4xl font-bold mb-4 gradient-text"
             >
@@ -152,7 +127,6 @@ const Hero = () => {
             <motion.p 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-muted-foreground max-w-2xl mx-auto"
             >
@@ -160,35 +134,22 @@ const Hero = () => {
             </motion.p>
           </div>
 
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {sectionCards.map((card, index) => (
               <motion.div
                 key={index}
-                variants={itemVariants}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="group spotlight"
               >
                 <Link to={card.link} className="block h-full">
                   <div className={`bg-gradient-to-br ${card.color} p-6 rounded-lg shadow-sm h-full border border-border/50 hover:shadow-md transition-all`}>
-                    <motion.div 
-                      className="flex items-center mb-4"
-                      whileHover={{ x: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <motion.div
-                        whileHover={{ rotate: [0, -10, 0, 10, 0] }}
-                        transition={{ duration: 0.5 }}
-                      >
-                        {card.icon}
-                      </motion.div>
+                    <div className="flex items-center mb-4">
+                      {card.icon}
                       <h3 className="text-xl font-semibold ml-3">{card.title}</h3>
-                    </motion.div>
+                    </div>
                     <p className="text-muted-foreground mb-4">{card.description}</p>
                     <div className="flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform">
                       Découvrir
@@ -198,7 +159,7 @@ const Hero = () => {
                 </Link>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

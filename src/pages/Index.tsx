@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
 import Footer from '@/components/layout/Footer';
-import PageTransition from '@/components/layout/PageTransition';
+import BackToTop from '@/components/layout/BackToTop';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -21,11 +21,10 @@ const Index = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.1
     });
 
-    document.querySelectorAll('.animate-on-scroll, .staggered-item, .animate-when-visible').forEach(element => {
+    document.querySelectorAll('.animate-on-scroll, .staggered-item').forEach(element => {
       observer.observe(element);
     });
 
@@ -33,17 +32,18 @@ const Index = () => {
   }, []);
 
   return (
-    <PageTransition className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>Portfolio | Accueil</title>
         <meta name="description" content="Portfolio Data Analyst & IA - Page d'accueil" />
       </Helmet>
       <Navigation />
-      <main className="flex-grow bg-gradient-to-b from-background to-background/50 pt-16">
+      <main className="flex-grow bg-gradient-to-b from-background to-background/50">
         <Hero />
       </main>
       <Footer />
-    </PageTransition>
+      <BackToTop />
+    </div>
   );
 };
 

@@ -193,20 +193,12 @@ const Skills = () => {
             </h3>
             <ul className="space-y-3 text-muted-foreground">
               <li className="flex items-center gap-2">
-                <ScrollText className="h-4 w-4 text-primary" />
-                <span>Certifications en cours (Data Engineering, Cloud)</span>
-              </li>
-              <li className="flex items-center gap-2">
                 <Github className="h-4 w-4 text-primary" />
                 <span>Projets open-source et collaboratifs</span>
               </li>
               <li className="flex items-center gap-2">
                 <FileSpreadsheet className="h-4 w-4 text-primary" />
                 <span>Veille technologique régulière</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary" />
-                <span>Participation à des hackathons et événements tech</span>
               </li>
               <li className="flex items-center gap-2">
                 <Dock className="h-4 w-4 text-primary" />

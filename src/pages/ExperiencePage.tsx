@@ -8,7 +8,7 @@ const ExperiencePage = () => {
   return (
     <PageTransition className="min-h-screen">
       <Navigation />
-      <main className="pt-16">
+      <main className="pt-16 md:pt-20">
         <Experience />
       </main>
     </PageTransition>

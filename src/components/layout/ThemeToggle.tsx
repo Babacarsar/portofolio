@@ -12,11 +12,7 @@ const ThemeToggle = () => {
   // Handle theme change
   useEffect(() => {
     if (mounted) {
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      document.documentElement.classList.toggle('dark', isDarkMode);
     }
   }, [isDarkMode, mounted]);
 
@@ -24,7 +20,7 @@ const ThemeToggle = () => {
   useEffect(() => {
     setMounted(true);
     
-    // Check system preference on initial load
+    // Check system preference on initial load if no preference is saved
     if (!localStorage.getItem('dark-mode')) {
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       setIsDarkMode(systemPrefersDark);
@@ -39,7 +35,7 @@ const ThemeToggle = () => {
       size="icon"
       onClick={() => setIsDarkMode(!isDarkMode)}
       aria-label={isDarkMode ? 'Activer le mode clair' : 'Activer le mode sombre'}
-      className="rounded-full bg-transparent hover:bg-background border border-border p-1.5"
+      className="rounded-full bg-background/80 hover:bg-background border border-border p-1.5"
     >
       <motion.div
         initial={{ rotate: 0 }}

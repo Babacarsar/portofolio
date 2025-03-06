@@ -8,7 +8,13 @@
     @apply text-2xl;
   }
   .section-container {
-    @apply py-12;
+    @apply py-10 px-4;
+  }
+  .section-title {
+    @apply text-3xl mb-6;
+  }
+  .section-subtitle {
+    @apply text-base mb-8;
   }
 }
 
@@ -19,6 +25,34 @@
   
   .card {
     margin-bottom: 1rem;
+  }
+  
+  .section-container {
+    @apply px-4 py-12;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section-container {
+    @apply px-5 py-16;
+  }
+}
+
+/* Ensure mobile-friendly navigation */
+@media (max-width: 640px) {
+  .mobile-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-background/90 backdrop-blur-md border-t border-border py-2 z-50;
+  }
+}
+
+/* Fix for overflow issues on mobile */
+@media (max-width: 480px) {
+  body {
+    @apply overflow-x-hidden;
+  }
+  
+  .container {
+    @apply px-4;
   }
 }
 

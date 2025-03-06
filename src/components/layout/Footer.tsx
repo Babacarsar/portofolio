@@ -1,9 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, ChevronRight, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, ChevronRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -84,21 +83,17 @@ const Footer = () => {
           </div>
           
           <div className="md:col-span-1">
-            <h3 className="font-medium text-foreground mb-4">Documents</h3>
-            <p className="text-sm mb-4">
-              Téléchargez mon CV complet pour découvrir mon parcours professionnel en détail.
+            <h3 className="font-medium text-foreground mb-4">Intéressé?</h3>
+            <p className="text-sm mb-3">
+              Téléchargez mon CV ou contactez-moi pour discuter de vos projets data.
             </p>
-            <Button asChild variant="outline" size="sm" className="group">
-              <a 
-                href={import.meta.env.BASE_URL + 'cv.pdf'} 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center"
-              >
-                <span>Télécharger mon CV</span>
-                <Download className="w-3 h-3 ml-2 group-hover:translate-y-1 transition-transform" />
-              </a>
-            </Button>
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-md 
+                        bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Me contacter
+            </Link>
           </div>
         </div>
         

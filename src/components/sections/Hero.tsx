@@ -79,7 +79,7 @@ const Hero = () => {
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="group">
-                <a href={import.meta.env.BASE_URL + 'cv.pdf'} target="_blank" rel="noopener noreferrer">
+                <a href={import.meta.env.BASE_URL + 'cv alternance.pdf'} target="_blank" rel="noopener noreferrer">
                   Télécharger mon CV
                   <Download className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                 </a>

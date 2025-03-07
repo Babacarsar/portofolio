@@ -12,7 +12,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
       tags: ["Apache Spark", "Apache Kafka", "Scala", "Docker", "Real-time Processing"],
       links: {
-        github: "https://github.com",
+        github: "https://github.com/Babacarsar/BIG_DATA_WITH_KAFKA_AND_SPARK",
         live: "https://example.com"
       },
       date: "Février 2025",
@@ -25,7 +25,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
       tags: ["Python", "PostgreSQL", "Power BI", "Apache Airflow", "ETL", "Data Lake"],
       links: {
-        github: "https://github.com",
+        github: "https://github.com/Babacarsar/ArchitectureDecisionnel",
         live: "https://example.com"
       },
       date: "Octobre 2024 - Décembre 2024",
@@ -51,7 +51,7 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
       tags: ["UX/UI Design", "Database", "Frontend", "Backend", "Education Tech"],
       links: {
-        github: "https://github.com",
+        github: "https://github.com/Babacarsar/Ges-ecole",
         live: "https://example.com"
       },
       date: "2024",

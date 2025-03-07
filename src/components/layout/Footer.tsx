@@ -101,7 +101,7 @@ const Footer = () => {
                 <Link to="/contact">Me contacter</Link>
               </Button>
               <Button asChild variant="outline" className="w-full border-slate-700 hover:bg-slate-800">
-                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/cv alternance.pdf" target="_blank" rel="noopener noreferrer">
                   Télécharger CV
                 </a>
               </Button>
@@ -113,7 +113,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-slate-400">
-            &copy; {currentYear} Babacar Sar - Tous droits réservés
+            &copy; {currentYear} Babacar Sarr - Tous droits réservés
           </p>
           <p className="text-xs text-slate-500 mt-2 md:mt-0">
             Construit avec React, Tailwind CSS et beaucoup d'enthousiasme

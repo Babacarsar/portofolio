@@ -1,24 +1,8 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Linkedin, Github, Calendar, Send } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { Mail, Phone, MapPin, Linkedin, Github, Calendar } from 'lucide-react';
 
 const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Message envoyé !",
-      description: "Merci pour votre message. Je vous répondrai dès que possible.",
-    });
-    // Ici, vous pourriez ajouter la logique pour envoyer le formulaire à un service backend
-  };
-
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-background to-secondary/20">
       <div className="section-container">
@@ -34,17 +18,17 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8"
+            className="space-y-8 max-w-xl mx-auto"
           >
             <h3 className="text-2xl font-semibold">Informations de Contact</h3>
             <p className="text-muted-foreground">
-              Vous pouvez me contacter directement ou utiliser le formulaire ci-contre.
-              Je m'efforce de répondre à toutes les demandes dans un délai de 24 heures.
+              Je suis ouvert aux opportunités professionnelles et aux collaborations intéressantes. 
+              N'hésitez pas à me contacter via l'un des moyens ci-dessous.
             </p>
 
             <div className="space-y-6">
@@ -128,50 +112,6 @@ const Contact = () => {
                 </motion.a>
               </div>
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="bg-card p-8 rounded-lg shadow-lg border border-border"
-          >
-            <h3 className="text-2xl font-semibold mb-6">Envoyez-moi un message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium">
-                    Nom
-                  </label>
-                  <Input id="name" placeholder="Votre nom" required />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium">
-                    Email
-                  </label>
-                  <Input id="email" type="email" placeholder="votre@email.com" required />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium">
-                  Sujet
-                </label>
-                <Input id="subject" placeholder="Sujet de votre message" required />
-              </div>
-
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium">
-                  Message
-                </label>
-                <Textarea id="message" placeholder="Votre message" rows={5} required />
-              </div>
-
-              <Button type="submit" className="w-full group">
-                <span>Envoyer</span>
-                <Send className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </form>
           </motion.div>
         </div>
       </div>

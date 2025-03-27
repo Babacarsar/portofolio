@@ -1,58 +1,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
 import { 
   Code, Database, BarChart, Terminal, Github, 
   Server, Dock, FileSpreadsheet, Workflow, Brain,
-  Users, LineChart, CloudCog, ScrollText, BookOpen
+  Users, LineChart, CloudCog, ScrollText, BookOpen,
+  Cpu, Layers, PieChart, Container, Archive, Table,
+  Pyramid, Settings, Monitor
 } from 'lucide-react';
 
 const Skills = () => {
   const programmingSkills = [
-    { name: "Python (pandas, NumPy, scikit-learn, matplotlib)", level: 95 },
-    { name: "SQL (requêtes complexes)", level: 90 },
-    { name: "R", level: 80 },
-    { name: "Scala", level: 75 },
-    { name: "Java", level: 70 },
-    { name: "TensorFlow / PyTorch", level: 85 },
-    { name: "Apache Spark / Hadoop", level: 85 },
-    { name: "Apache Airflow", level: 80 },
-    { name: "Docker / Kubernetes", level: 75 },
-    { name: "Talend / Dataiku / Amph.ai", level: 85 }
+    { name: "Python", icon: <Cpu className="h-5 w-5 text-primary" /> },
+    { name: "SQL", icon: <Table className="h-5 w-5 text-primary" /> },
+    { name: "R", icon: <PieChart className="h-5 w-5 text-primary" /> },
+    { name: "Scala", icon: <Layers className="h-5 w-5 text-primary" /> },
+    { name: "Java", icon: <Monitor className="h-5 w-5 text-primary" /> },
+    { name: "Machine Learning", icon: <Pyramid className="h-5 w-5 text-primary" /> }
   ];
 
   const dataManagementSkills = [
-    { name: "PostgreSQL / MySQL / SQL Server", level: 90 },
-    { name: "MongoDB (NoSQL)", level: 85 },
-    { name: "AWS (Redshift, S3)", level: 80 },
-    { name: "Excel avancé", level: 90 },
-    { name: "ETL & Data Pipelines", level: 85 },
-    { name: "Data Modeling", level: 80 },
-    { name: "Data Quality & Governance", level: 75 },
-    { name: "Big Data Processing", level: 80 }
+    { name: "Bases de données relationnelles", icon: <Database className="h-5 w-5 text-primary" /> },
+    { name: "NoSQL", icon: <Archive className="h-5 w-5 text-primary" /> },
+    { name: "Cloud Data Solutions", icon: <CloudCog className="h-5 w-5 text-primary" /> },
+    { name: "ETL", icon: <Workflow className="h-5 w-5 text-primary" /> },
+    { name: "Modélisation de données", icon: <Settings className="h-5 w-5 text-primary" /> }
   ];
 
   const projectTools = [
-    { name: "Git / GitHub", level: 90 },
-    { name: "Jira / Trello", level: 85 },
-    { name: "Scrum / Kanban", level: 85 },
-    { name: "Terraform / Ansible", level: 75 },
-    { name: "Power BI", level: 90 },
-    { name: "Tableau", level: 85 },
-    { name: "Powerpoint", level: 90 },
-    { name: "Documentation technique", level: 85 }
+    { name: "Gestion de version", icon: <Github className="h-5 w-5 text-primary" /> },
+    { name: "Gestion de projet", icon: <Dock className="h-5 w-5 text-primary" /> },
+    { name: "Conteneurisation", icon: <Container className="h-5 w-5 text-primary" /> },
+    { name: "Business Intelligence", icon: <BarChart className="h-5 w-5 text-primary" /> },
+    { name: "Automatisation", icon: <Settings className="h-5 w-5 text-primary" /> }
   ];
 
   const softSkills = [
-    { name: "Esprit analytique", level: 95 },
-    { name: "Capacité d'adaptation", level: 90 },
-    { name: "Collaboration et esprit d'équipe", level: 90 },
-    { name: "Curiosité intellectuelle", level: 95 },
-    { name: "Résolution de problèmes", level: 85 },
-    { name: "Communication", level: 80 },
-    { name: "Gestion du temps", level: 85 },
-    { name: "Autonomie", level: 90 }
+    { name: "Analyse critique", icon: <Brain className="h-5 w-5 text-primary" /> },
+    { name: "Adaptabilité", icon: <Workflow className="h-5 w-5 text-primary" /> },
+    { name: "Travail d'équipe", icon: <Users className="h-5 w-5 text-primary" /> },
+    { name: "Communication", icon: <ScrollText className="h-5 w-5 text-primary" /> }
   ];
 
   const containerVariants = {
@@ -74,20 +61,17 @@ const Skills = () => {
     }
   };
 
-  const SkillBar = ({ name, level }: { name: string; level: number }) => (
+  const SkillItem = ({ name, icon }: { name: string; icon: React.ReactNode }) => (
     <motion.div 
       variants={itemVariants}
-      className="mb-6"
+      className="flex items-center gap-3 mb-4 p-2 rounded-lg hover:bg-accent/10 transition-colors"
     >
-      <div className="flex justify-between mb-1">
-        <span className="text-sm font-medium">{name}</span>
-        <span className="text-sm font-medium text-primary">{level}%</span>
-      </div>
-      <Progress value={level} className="h-2" />
+      {icon}
+      <span className="text-sm font-medium">{name}</span>
     </motion.div>
   );
 
-  const SkillCategory = ({ title, icon, skills }: { title: string; icon: React.ReactNode; skills: { name: string; level: number }[] }) => (
+  const SkillCategory = ({ title, icon, skills }: { title: string; icon: React.ReactNode; skills: { name: string; icon: React.ReactNode }[] }) => (
     <motion.div
       variants={containerVariants}
       initial="hidden"
@@ -103,7 +87,7 @@ const Skills = () => {
       </div>
       <Separator className="mb-6" />
       {skills.map((skill, index) => (
-        <SkillBar key={index} name={skill.name} level={skill.level} />
+        <SkillItem key={index} name={skill.name} icon={skill.icon} />
       ))}
     </motion.div>
   );
@@ -119,7 +103,7 @@ const Skills = () => {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Mes Compétences</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Un aperçu détaillé des compétences techniques et transversales que j'ai développées
+            Un aperçu détaillé des compétences techniques et transversales développées 
             tout au long de mon parcours professionnel et académique.
           </p>
         </motion.div>

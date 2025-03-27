@@ -22,10 +22,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="md:col-span-1">
             <Link to="/" className="text-2xl font-bold text-white hover:text-primary transition-colors">
-              Babacar Sar
+              Babacar Sarr
             </Link>
             <p className="mt-4 text-sm text-slate-300">
-              Analyste Data & Intelligence Artificielle passionné par la transformation des données en insights stratégiques.
+              Analyste Data & Data engineer passionné par la transformation des données en insights stratégiques.
             </p>
             <div className="flex mt-6 space-x-4">
               <a 
@@ -46,13 +46,7 @@ const Footer = () => {
               >
                 <Github size={20} />
               </a>
-              <a 
-                href="mailto:ba66bacar@gmail.com" 
-                className="p-2 rounded-full bg-slate-800 hover:bg-primary hover:text-white transition-colors"
-                aria-label="Email"
-              >
-                <Mail size={20} />
-              </a>
+
             </div>
           </div>
           
@@ -86,7 +80,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="h-4 w-4 mr-3 text-primary" />
-                <span>ba66bacar@gmail.com</span>
+                <span>ba66bacar@gmail.com | babacar.sarr1@ecoles-epsi.net</span>
+                
               </li>
             </ul>
           </div>
@@ -101,7 +96,7 @@ const Footer = () => {
                 <Link to="/contact">Me contacter</Link>
               </Button>
               <Button asChild variant="outline" className="w-full border-slate-700 hover:bg-slate-800">
-                <a href="/cv alternance.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
                   Télécharger CV
                 </a>
               </Button>
@@ -115,9 +110,7 @@ const Footer = () => {
           <p className="text-sm text-slate-400">
             &copy; {currentYear} Babacar Sarr - Tous droits réservés
           </p>
-          <p className="text-xs text-slate-500 mt-2 md:mt-0">
-            Construit avec React, Tailwind CSS et beaucoup d'enthousiasme
-          </p>
+         
         </div>
       </div>
     </footer>
